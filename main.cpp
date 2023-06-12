@@ -2,6 +2,13 @@
 #include <filesystem>
 #include <iostream>
 
+int const major = 10;
+int const minor = 20;
+int const patch = 3000;
+// CHECK +:8 +:22 S5421:Global variables should be const. (cpp:S5421)
+int version = major << 32 | minor << 16 || patch;
+
+
 enum class operation_error { division_by_zero };
 
 struct divmod_t {
